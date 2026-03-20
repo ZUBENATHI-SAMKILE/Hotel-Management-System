@@ -62,6 +62,8 @@ export default function Landing() {
             <span className="logo-ds">DS</span>
             <span>DreamScape Hotel</span>
           </div>
+
+          {/* Desktop nav links */}
           <div className={`land-nav-links ${menuOpen ? 'open' : ''}`}>
             <button onClick={() => scrollTo('about')}>About</button>
             <button onClick={() => scrollTo('rooms')}>Rooms</button>
@@ -69,15 +71,34 @@ export default function Landing() {
             <button onClick={() => scrollTo('gallery')}>Gallery</button>
             <button onClick={() => scrollTo('contact')}>Contact</button>
           </div>
+
           <div className="land-nav-actions">
-            {token ? (
-              <Link to={getDashboardLink()} className="btn btn-gold">My Dashboard</Link>
-            ) : (
-              <>
-                <Link to="/login" className="btn btn-outline">Sign In</Link>
-                <Link to="/register" className="btn btn-gold">Book Now</Link>
-              </>
+            {/* Desktop buttons  */}
+            <div className="nav-btns-desktop">
+              {token ? (
+                <Link to={getDashboardLink()} className="btn btn-gold">My Dashboard</Link>
+              ) : (
+                <>
+                  <Link to="/login" className="btn btn-outline">Sign In</Link>
+                  <Link to="/register" className="btn btn-gold">Book Now</Link>
+                </>
+              )}
+            </div>
+
+            {/* Mobile buttons */}
+            {menuOpen && (
+              <div className="nav-btns-mobile">
+                {token ? (
+                  <Link to={getDashboardLink()} className="btn btn-gold" onClick={() => setMenuOpen(false)}>My Dashboard</Link>
+                ) : (
+                  <>
+                    <Link to="/login" className="btn btn-outline" onClick={() => setMenuOpen(false)}>Sign In</Link>
+                    <Link to="/register" className="btn btn-gold" onClick={() => setMenuOpen(false)}>Book Now</Link>
+                  </>
+                )}
+              </div>
             )}
+
             <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -228,7 +249,6 @@ export default function Landing() {
       <section className="land-section" id="contact">
         <div className="land-container">
           <div className="contact-grid">
-            {/* Map */}
             <div className="map-block fade-up">
               <div className="section-tag">Location</div>
               <h2 className="section-title">Find Us</h2>
@@ -246,8 +266,6 @@ export default function Landing() {
                 />
               </div>
             </div>
-
-            {/* Contact Form */}
             <div className="contact-form-block fade-up">
               <div className="section-tag">Contact</div>
               <h2 className="section-title">Get In Touch</h2>
@@ -323,8 +341,6 @@ function getRoomImage(type) {
     SUITE: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80',
     DELUXE: "https://plus.unsplash.com/premium_photo-1671269705768-cad27668134c?w=600&q=80",
     PENTHOUSE: 'https://images.unsplash.com/photo-1611755489400-3c53602ab783?w=600&q=80',
-    
-    
   }
   return imgs[type] || imgs.SINGLE
 }
