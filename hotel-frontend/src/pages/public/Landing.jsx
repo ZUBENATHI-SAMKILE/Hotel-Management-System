@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Star, MapPin, Phone, Mail, Wifi, Car, Coffee, Waves, Dumbbell, Shield, ChevronDown, Menu, X } from 'lucide-react'
+import { Star,CheckCircle, MapPin, Phone, Mail, Wifi, Car, Coffee, Waves, Dumbbell, Shield, ChevronDown, Menu, X } from 'lucide-react'
 import { getAvailableRooms } from '../../api'
 import './Landing.css'
 
@@ -253,7 +253,7 @@ export default function Landing() {
               <h2 className="section-title">Get In Touch</h2>
               {contactSent ? (
                 <div className="contact-success">
-                  <div style={{ fontSize: 40 }}>✅</div>
+                  <div style={{ fontSize: 40 }}><CheckCircle size={40} /></div>
                   <h3>Message Sent!</h3>
                   <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
                   <button className="btn btn-gold" onClick={() => setContactSent(false)}>Send Another</button>
@@ -319,10 +319,12 @@ export default function Landing() {
 function getRoomImage(type) {
   const imgs = {
     SINGLE: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80',
-    DOUBLE: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80',
+    DOUBLE: "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=600&q=80",
     SUITE: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80',
-    DELUXE: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80',
-    PENTHOUSE: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80',
+    DELUXE: "https://plus.unsplash.com/premium_photo-1671269705768-cad27668134c?w=600&q=80",
+    PENTHOUSE: 'https://images.unsplash.com/photo-1611755489400-3c53602ab783?w=600&q=80',
+    
+    
   }
   return imgs[type] || imgs.SINGLE
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { CalendarCheck, BedDouble, Clock, XCircle } from 'lucide-react'
+import { CalendarCheck, BedDouble, Clock, XCircle,Hotel } from 'lucide-react'
 import { getGuests, getMyBookings, cancelBooking } from '../../api'
 
 const STATUS_COLORS = { CONFIRMED: 'badge-blue', CHECKED_IN: 'badge-green', CHECKED_OUT: 'badge-gray', CANCELLED: 'badge-red' }
@@ -36,7 +36,7 @@ export default function CustomerDashboard() {
     <div>
       <div style={{ marginBottom: 28 }}>
         <h1 style={{ fontSize: 26, fontWeight: 800 }}>My Bookings</h1>
-        <p style={{ color: '#6b7280', marginTop: 4 }}>Welcome back, {user.name}! Manage your reservations here.</p>
+        <p style={{ color: '#6b7280',fontSize: 18, marginTop: 4 }}>Welcome back, <strong>{user.name}</strong>! <br></br>Manage your reservations here.</p>
       </div>
 
       {/* Stats */}
@@ -64,7 +64,7 @@ export default function CustomerDashboard() {
         {loading && <div style={{ textAlign: 'center', padding: 32, color: '#9ca3af' }}>Loading...</div>}
         {!loading && active.length === 0 && (
           <div style={{ background: '#fff', borderRadius: 12, padding: 40, textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ fontSize: 40, marginBottom: 12 }}>🏨</div>
+            <div style={{ fontSize: 40, marginBottom: 12 }}><Hotel size={49} color='red' /></div>
             <h3 style={{ fontWeight: 700, marginBottom: 8 }}>No active bookings</h3>
             <p style={{ color: '#9ca3af', fontSize: 14, marginBottom: 20 }}>Ready to plan your next stay?</p>
             <Link to="/rooms" className="btn btn-gold">Browse Rooms</Link>

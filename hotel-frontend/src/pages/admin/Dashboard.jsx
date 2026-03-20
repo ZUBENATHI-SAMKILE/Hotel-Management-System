@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BedDouble, Users, CalendarCheck, DollarSign, TrendingUp, UserCog, BedSingle, AlertCircle } from 'lucide-react'
+import { BedDouble, Users, CalendarCheck, DollarSign, TrendingUp, UserCog, BedSingle, AlertCircle,Hand } from 'lucide-react'
 import { getDashboardStats } from "../../api";
 import './Dashboard.css'
 
@@ -34,7 +34,7 @@ export default function Dashboard() {
       <div className="page-header">
         <div>
           <h1 className="page-title">Dashboard</h1>
-          <p className="page-sub">Welcome back, {user.name} 👋</p>
+          <p className="page-sub">Welcome back, {user.name} <Hand size={23} /></p>
         </div>
       </div>
 

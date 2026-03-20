@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { ArrowLeft, CalendarCheck } from 'lucide-react'
+import { ArrowLeft, CalendarCheck,PartyPopper } from 'lucide-react'
 import { getRooms, getGuests, createGuest, createBooking } from '../../api'
 import '../public/Landing.css'
 
@@ -55,7 +55,7 @@ export default function BookRoom() {
   if (success) return (
     <div style={{ minHeight: '100vh', background: '#f8f9fa', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
       <div style={{ background: '#fff', borderRadius: 16, padding: 48, textAlign: 'center', maxWidth: 480, boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}>
-        <div style={{ fontSize: 56, marginBottom: 16 }}>🎉</div>
+        <div style={{ fontSize: 56, marginBottom: 16 }}><PartyPopper size={56} className="w-8 h-8 text-pink-500" /></div>
         <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 10 }}>Booking Confirmed!</h2>
         <p style={{ color: '#6b7280', marginBottom: 24 }}>Your booking for Room {room.roomNumber} has been confirmed. We look forward to welcoming you!</p>
         <Link to="/my" className="btn btn-gold" style={{ justifyContent: 'center' }}>View My Bookings</Link>

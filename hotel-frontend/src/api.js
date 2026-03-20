@@ -22,7 +22,7 @@ api.interceptors.response.use(
   }
 )
 
-// Helper — ensure response is always an array
+// To ensure response is always an array
 const toArray = r => Array.isArray(r.data) ? r.data : (r.data?.content ?? r.data ?? [])
 
 // Auth

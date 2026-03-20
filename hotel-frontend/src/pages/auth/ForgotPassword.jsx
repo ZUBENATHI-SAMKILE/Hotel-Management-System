@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Mail, ArrowLeft } from 'lucide-react'
+import { Mail, ArrowLeft} from 'lucide-react'
 import axios from 'axios'
 import './Auth.css'
 
@@ -34,7 +34,7 @@ export default function ForgotPassword() {
 
         {success ? (
           <div style={{ textAlign: 'center', padding: '20px 0' }}>
-            <div style={{ fontSize: 48, marginBottom: 12 }}>📧</div>
+            <div style={{ fontSize: 48, marginBottom: 12 }}><Mail /></div>
             <h2 className="auth-title">Check Your Email</h2>
             <p className="auth-sub">If that email is registered, you'll receive a reset link shortly.</p>
             <Link to="/login" className="auth-btn" style={{ display: 'block', textAlign: 'center', marginTop: 24, textDecoration: 'none' }}>Back to Sign In</Link>

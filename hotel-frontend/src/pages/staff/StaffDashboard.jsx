@@ -14,7 +14,7 @@ export default function StaffDashboard() {
       <div className="page-header">
         <div>
           <h1 className="page-title">Staff Dashboard</h1>
-          <p className="page-sub">Welcome, {user.name} 👋 — {user.role}</p>
+          <p className="page-sub">Welcome, {user.name} — {user.role}</p>
         </div>
       </div>
 

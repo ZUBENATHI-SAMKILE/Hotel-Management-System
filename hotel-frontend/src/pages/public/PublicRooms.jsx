@@ -7,10 +7,10 @@ import './PublicRooms.css'
 
 const TYPE_IMAGES = {
   SINGLE: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80',
-  DOUBLE: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80',
+  DOUBLE: "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=600&q=80",
   SUITE: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80',
   DELUXE: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80',
-  PENTHOUSE: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80',
+  PENTHOUSE: 'https://images.unsplash.com/photo-1611755489400-3c53602ab783?w=600&q=80',
 }
 
 export default function PublicRooms() {
