@@ -7,7 +7,7 @@ A full-stack hotel management system with a public-facing website, customer book
 
 | Service | URL |
 |---|---|
-| **Frontend** | [dreamscape-hotel.vercel.app](https://dreamscape-hotel.vercel.app) |
+| **Frontend** | [dreamscape-hotel.vercel.app](https://hotelfrontend-lime.vercel.app) |
 | **Backend API** | [hotel-management-system-6gng.onrender.com](https://hotel-management-system-6gng.onrender.com) |
 
 ---
